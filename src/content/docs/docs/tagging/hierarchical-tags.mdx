@@ -1,0 +1,54 @@
+---
+title: Hierarchical Tags
+description: Create nested tags up to 3 levels deep for powerful organization.
+---
+
+MakerVault supports up to 3 levels of tag hierarchy, letting you organize tags in a tree structure that mirrors how you think about your files.
+
+## Example hierarchy
+
+```
+Holiday
+├── Christmas
+│   ├── Ornaments
+│   └── Gift Tags
+├── Easter
+└── Halloween
+
+Year
+├── 2025
+└── 2026
+
+Material
+├── Wood
+├── Acrylic
+└── Leather
+```
+
+## How nesting works
+
+- **Level 1**: Top-level tags (Holiday, Year, Material)
+- **Level 2**: Children of top-level tags (Christmas, 2025, Wood)
+- **Level 3**: Grandchildren (Ornaments, Gift Tags)
+
+Maximum depth is 3 levels. When creating a tag in Settings, the parent dropdown shows tags at depth 0 and 1 only.
+
+## Filtering by parent
+
+When you click a parent tag in the sidebar, MakerVault automatically includes all its descendants. Clicking "Holiday" shows files tagged with Holiday, Christmas, Ornaments, Gift Tags, Easter, or Halloween.
+
+This uses a recursive SQL query to walk the tag tree, so it's instant regardless of how many children exist.
+
+## Tag tree sidebar
+
+The left sidebar shows your tags in a collapsible tree view. Each tag shows:
+
+- Its color dot
+- Its name
+- The number of files tagged (including files tagged with descendants)
+
+Click the chevron to expand or collapse a tag's children.
+
+## Search and tags
+
+When you search, tag names are included in the search index. Searching for "christmas" finds files tagged "Christmas" even if the filename doesn't contain that word.

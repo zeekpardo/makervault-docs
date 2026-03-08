@@ -1,0 +1,38 @@
+---
+title: Adding Your First Folder
+description: How to add watched folders so MakerVault can index your design files.
+---
+
+MakerVault organizes your files by watching folders you specify. Point it at any folder on your computer and it automatically scans all supported design files, including nested subfolders.
+
+## Adding a folder
+
+1. Click the **Add Folder** button in the left sidebar, or use the welcome screen prompt when the app is empty.
+2. Select a folder from the native file picker.
+3. MakerVault immediately begins scanning the folder and all its subfolders.
+
+You'll see a progress indicator in the status bar while scanning. A typical folder with 5,000 files scans in under a second.
+
+## What gets scanned
+
+MakerVault recognizes 25+ file types across these categories:
+
+| Category | File Types |
+|---|---|
+| **Vector** | SVG, DXF, AI, EPS, CDR |
+| **Laser/CNC** | LightBurn (.lbrn/.lbrn2), xTool (.xcs), RDWorks (.rd), VCarve Pro (.crv), Aspire (.crv3d) |
+| **G-code** | .gcode, .nc, .tap |
+| **3D** | STL, 3MF, OBJ |
+| **Raster** | PNG, JPG, WebP, BMP, GIF, TIFF |
+| **Document** | PDF |
+| **Font** | TTF, OTF, WOFF, WOFF2 |
+
+Files with unsupported extensions are silently skipped. Hidden files and directories (like `.DS_Store` and `._` resource forks) are automatically ignored.
+
+## Multiple folders
+
+You can add as many folders as you like. Each folder appears in the left sidebar with a file count. Click a folder name to filter the file list to only that folder's contents.
+
+## Removing a folder
+
+Right-click a watched folder in the sidebar and select **Remove**. This removes the folder from MakerVault's index but does not delete any files from your disk.

@@ -1,0 +1,41 @@
+---
+title: Basic Search
+description: How to search across filenames, tags, notes, and source URLs.
+---
+
+MakerVault's search is powered by SQLite FTS5 (full-text search). Results appear as you type with a 300ms debounce to keep the interface responsive.
+
+## What gets searched
+
+By default, search matches against:
+
+- **Filenames** — The file's name (without path)
+- **Tags** — All tags applied to the file, including ancestor tag names
+- **Notes** — Your personal notes on the file
+- **Source URLs** — Purchase URLs and source information
+- **Bundle names** — The bundle or product name a file came from
+
+## How to search
+
+Type in the search bar at the top of the file list. Results filter in real-time as you type.
+
+MakerVault uses FTS5 prefix matching, so typing `christ` matches "Christmas", "Christina", etc.
+
+## Combining search with filters
+
+Search text works together with all other filters using AND logic. For example:
+
+- Search "ornament" + Tag filter "Christmas" = files named "ornament" that are tagged "Christmas"
+- Search "box" + File type "SVG" = SVG files with "box" in the name
+
+## Empty results
+
+When no files match your search, MakerVault shows helpful suggestions:
+
+- Try a different search term
+- Remove active filters
+- Check if you're filtering by a specific folder
+
+## Performance
+
+Search returns results in under 30ms for libraries with 50,000+ files.

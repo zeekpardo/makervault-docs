@@ -1,0 +1,41 @@
+---
+title: Supported Preview Types
+description: What each file type looks like in the Spacebar preview.
+---
+
+MakerVault renders as many file types as possible natively in the preview, without needing to open external applications.
+
+## Native rendering
+
+These file types render directly in the preview:
+
+| Type | How it renders |
+|---|---|
+| **SVG** | Full vector rendering via native `<img>` element |
+| **PNG, JPG, WebP, BMP, GIF** | Native image rendering |
+| **TIFF** | Converted to PNG via macOS `sips` |
+| **PDF** | First page rendered via macOS `sips` conversion |
+| **AI, EPS** | Rendered via macOS `sips` PNG conversion |
+| **TTF, OTF, WOFF, WOFF2** | Font sample showing uppercase, lowercase, numbers, pangram at multiple sizes |
+| **G-code, NC, TAP** | Plain text preview of the first 200 lines |
+
+## LightBurn files
+
+LightBurn files (`.lbrn` and `.lbrn2`) get special treatment:
+
+- If the file contains an embedded thumbnail, MakerVault extracts and displays it
+- The metadata panel shows cut settings (layer name, type, speed, power)
+- Text elements and notes from the file are displayed
+- Falls back to a placeholder if no thumbnail is embedded
+
+## Placeholder preview
+
+File types without native preview support (DXF, CDR, STL, 3MF, OBJ, xTool, RDWorks, VCarve Pro) show a placeholder icon with the file type label. You can still see all metadata and use the "Open in [App]" button to view the file in its native application.
+
+## Expanded file row
+
+In addition to the Spacebar overlay, you can expand a file row inline to see a 3-column layout:
+
+1. **Preview** — Thumbnail or rendered preview
+2. **Info + Notes** — File details and editable notes
+3. **Metadata** — Embedded metadata (LightBurn cut settings, etc.)

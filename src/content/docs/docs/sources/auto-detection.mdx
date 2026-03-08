@@ -1,0 +1,31 @@
+---
+title: Auto-Detection
+description: MakerVault automatically detects the source when you paste a purchase URL.
+---
+
+When you paste a purchase URL into a file's source section, MakerVault automatically detects which marketplace it came from.
+
+## How it works
+
+1. Paste a URL like `https://designbundles.net/product/my-bundle-123`.
+2. MakerVault extracts the domain (`designbundles.net`).
+3. It checks if a source already exists for that domain.
+4. If yes, it auto-selects that source.
+5. If no, it creates a new source from the domain name (e.g., "Designbundles") and selects it.
+
+## Supported patterns
+
+Auto-detection works with any URL. Common marketplaces include:
+
+| Domain | Auto-created source name |
+|---|---|
+| `designbundles.net` | Designbundles |
+| `creativefabrica.com` | Creativefabrica |
+| `etsy.com` | Etsy |
+| `creativemarket.com` | Creativemarket |
+
+You can rename auto-created sources to whatever you prefer in the [Sources settings](/sources/managing-sources).
+
+## Manual override
+
+Auto-detection only sets the source if one isn't already selected. If you've already chosen a source for a file, pasting a URL won't change it.

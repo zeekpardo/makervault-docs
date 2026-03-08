@@ -1,0 +1,39 @@
+---
+title: Metadata Extraction
+description: How MakerVault reads inside LightBurn files to extract notes, settings, and text.
+---
+
+MakerVault reads inside LightBurn `.lbrn` and `.lbrn2` files at scan time to extract metadata that's normally invisible without opening LightBurn.
+
+## What gets extracted
+
+| Data | Source in file | Where it appears |
+|---|---|---|
+| **Show Notes** | `<Notes>` element | Detail panel, search index |
+| **Cut Settings** | `<CutSetting>` elements | Detail panel, preview |
+| **Text Elements** | `<Shape Type="Text">` attributes | Detail panel, deep search |
+| **Font Names** | `Font` attribute on text shapes | Detail panel, font auto-linking |
+| **App Version** | `<LightBurnProject AppVersion>` | Detail panel |
+| **Embedded Thumbnail** | `<Thumbnail Source>` | Preview |
+
+## File format handling
+
+LightBurn uses two file formats:
+
+- **`.lbrn`** — Plain XML
+- **`.lbrn2`** — Can be either plain XML or ZIP-compressed XML
+
+MakerVault handles both transparently. It tries ZIP decompression first, then falls back to reading the file as plain XML.
+
+## When extraction happens
+
+Metadata is extracted during the initial folder scan. If you add LightBurn files to a watched folder later, the file watcher picks them up and extracts metadata automatically.
+
+MakerVault also has a stale metadata refresh that re-extracts data for files that were scanned before certain extraction features were added (like font extraction).
+
+## Storage
+
+Extracted metadata is stored in two forms:
+
+- **Structured JSON** — For display in the detail panel and preview
+- **Flattened text** — For full-text search via the FTS5 index

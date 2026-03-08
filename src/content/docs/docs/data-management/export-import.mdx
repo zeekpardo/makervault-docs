@@ -1,0 +1,49 @@
+---
+title: Export & Import
+description: Export your library metadata as JSON and import it on another machine.
+---
+
+MakerVault lets you export all your library metadata (tags, notes, sources, file links) as a portable JSON file and import it on another machine or after a fresh install.
+
+## What gets exported
+
+| Data | Included |
+|---|---|
+| **Files** | Path, tags, notes, source, purchase URL, bundle name, timestamps |
+| **Tags** | Name, color, parent hierarchy, UUIDs |
+| **File-tag associations** | Which tags are on which files |
+| **File links** | Related file relationships |
+| **Sources** | Name, URL, UUIDs |
+
+Your actual design files are **not** included in the export — only the metadata MakerVault has about them. The files stay on your disk.
+
+## Exporting
+
+1. Open **Settings** and click the **Data** tab.
+2. Click **Export**.
+3. Choose a location and filename in the native save dialog.
+4. MakerVault writes a `.json` file containing all your library metadata.
+
+## Importing
+
+1. Open **Settings** and click the **Data** tab.
+2. Click **Import**.
+3. Select a previously exported `.json` file.
+4. MakerVault merges the imported data with your existing library.
+
+## Merge strategy
+
+Import uses a **last-write-wins** merge based on `updated_at` timestamps:
+
+- **Files**: Matched by path. If a file exists at the same path, the newer metadata wins.
+- **Tags**: Matched by UUID. If a tag exists with the same UUID, the newer version wins.
+- **Sources**: Matched by UUID. Newer version wins.
+- **File links**: Recreated if both files exist in the library.
+
+This means you can export from Machine A, make changes on both machines, then import on Machine B without losing work from either side.
+
+## Use cases
+
+- **Moving to a new Mac** — Export on old machine, import on new one. Re-add your watched folders and MakerVault reconnects your metadata to the files.
+- **Backup** — Periodically export as a backup of all your tagging and organization work.
+- **Sharing** — Share your tag structure and notes with another maker who has the same files.

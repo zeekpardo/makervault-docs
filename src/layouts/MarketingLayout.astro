@@ -1,0 +1,38 @@
+---
+import '../styles/global.css';
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'MakerVault', description = 'Local-first file organizer for makers. Find any design file in seconds.' } = Astro.props;
+const pageTitle = title === 'MakerVault' ? title : `${title} | MakerVault`;
+---
+
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:image" content="/og-icon.png" />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="min-h-screen bg-background text-foreground antialiased">
+    <NavBar client:load />
+    <main class="min-h-screen">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

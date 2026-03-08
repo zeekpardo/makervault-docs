@@ -1,0 +1,62 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+
+const entries = [
+  {
+    date: "2026-01-30",
+    title: "Performance Improvements",
+    changes: ["Improved performance"],
+  },
+  {
+    date: "2026-01-26",
+    title: "Design Updates",
+    changes: ["Updated design", "Fixed a bug"],
+  },
+  {
+    date: "2026-01-12",
+    title: "New Features",
+    changes: ["Added new feature", "Fixed a bug"],
+  },
+];
+
+function timeAgo(dateStr: string) {
+  const date = new Date(dateStr);
+  const now = new Date();
+  const diffMs = now.getTime() - date.getTime();
+  const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  if (days < 30) return `${days} days ago`;
+  const months = Math.floor(days / 30);
+  if (months < 12) return `${months} month${months > 1 ? 's' : ''} ago`;
+  const years = Math.floor(months / 12);
+  return `${years} year${years > 1 ? 's' : ''} ago`;
+}
+---
+
+<MarketingLayout title="Changelog" description="Stay up to date with the latest changes in MakerVault.">
+  <div class="container mx-auto px-4 max-w-3xl pt-24 pb-16">
+    <div class="mb-12 text-balance pt-8 text-center">
+      <h1 class="mb-2 font-bold text-5xl">Changelog</h1>
+      <p class="text-lg opacity-50">
+        Stay up to date with the latest changes in our product.
+      </p>
+    </div>
+
+    <div class="mx-auto max-w-xl grid gap-6">
+      {entries.map((entry) => (
+        <div class="rounded-3xl bg-muted p-6 lg:p-8">
+          <div class="flex items-center justify-between mb-3">
+            <h2 class="text-xl font-semibold">{entry.title}</h2>
+            <span class="uppercase text-primary text-xs font-medium" title={entry.date}>
+              {timeAgo(entry.date)}
+            </span>
+          </div>
+          <ul class="list-disc pl-6 text-foreground/60 text-sm space-y-1">
+            {entry.changes.map((change) => (
+              <li>{change}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</MarketingLayout>

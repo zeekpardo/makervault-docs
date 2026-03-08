@@ -1,0 +1,33 @@
+---
+title: Cut Settings Display
+description: View LightBurn layer names, types, speed, and power without opening LightBurn.
+---
+
+One of MakerVault's most useful features for laser cutter users is the ability to see LightBurn cut settings at a glance, without opening the file in LightBurn.
+
+## What's displayed
+
+For each cut layer in a LightBurn file, MakerVault shows:
+
+| Field | Description |
+|---|---|
+| **Layer index** | The layer number (0, 1, 2, ...) |
+| **Name** | Custom layer name (e.g., "Tumblers", "C02150") |
+| **Type** | Scan (engrave), Cut, or Line |
+| **Speed** | mm/s speed setting |
+| **Min Power** | Minimum power percentage |
+| **Max Power** | Maximum power percentage |
+| **Interval** | Line interval for scan operations |
+| **Priority** | Processing order |
+
+## Where to see it
+
+Cut settings appear in three places:
+
+1. **File detail panel** — The "LightBurn" section shows a table of all cut layers
+2. **Spacebar preview** — The metadata sidebar includes cut settings
+3. **Expanded file row** — The metadata column shows cut settings inline
+
+## Why this matters
+
+Makers often have hundreds of LightBurn files with different cut settings for different materials. Being able to see "this file uses 300mm/s at 35% power on a Scan layer called Tumblers" without opening LightBurn saves significant time when you're looking for the right settings to reuse.

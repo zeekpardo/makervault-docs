@@ -1,0 +1,44 @@
+---
+title: Deep Search
+description: Search inside file contents by prefixing your query with /.
+---
+
+Deep search lets you search inside the actual content of your files, not just their names and metadata. This is especially powerful for LightBurn files where text elements, layer names, and cut settings are embedded in the file.
+
+## How to use deep search
+
+Type `/` as the first character in the search bar, followed by your query:
+
+```
+/HOME
+```
+
+The search bar shows a visual indicator — "Searching file contents..." — to confirm you're in deep search mode.
+
+## What deep search finds
+
+In addition to everything [basic search](/search-filtering/basic-search) covers, deep search also matches against:
+
+- **LightBurn text elements** — Text objects in your LightBurn designs (e.g., "HOME", "Welcome")
+- **LightBurn layer names** — Custom layer names (e.g., "Tumblers", "C02150")
+- **LightBurn cut settings** — Speed, power, and type values
+- **LightBurn show notes** — Notes embedded in the file
+- **Font names** — Font families used in LightBurn text elements
+
+## Examples
+
+| Query | Finds |
+|---|---|
+| `/HOME` | LightBurn files with "HOME" as a text element |
+| `/Tumblers` | Files with a layer named "Tumblers" |
+| `/300` | Files with speed or power value of 300 |
+| `/Arial` | LightBurn files using the Arial font |
+
+## When to use deep search vs. basic search
+
+- **Basic search** (no `/` prefix): Fast, searches filenames, tags, and notes. Use this 90% of the time.
+- **Deep search** (`/` prefix): Searches everything including file contents. Use when you need to find a file by something inside it.
+
+## Extensibility
+
+Deep search currently extracts content from LightBurn files. Support for additional file types (SVG text elements, G-code comments) is planned for future releases.

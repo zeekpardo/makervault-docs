@@ -1,0 +1,35 @@
+---
+title: Font Auto-Linking
+description: MakerVault automatically links font files to LightBurn files that use them.
+---
+
+When your library contains both font files (TTF, OTF) and LightBurn files that use those fonts, MakerVault automatically creates links between them.
+
+## How it works
+
+1. During scanning, MakerVault extracts font family names from LightBurn text elements.
+2. After scanning, it matches font filenames against the extracted font names.
+3. When a match is found, it creates a "uses font" relationship link between the LightBurn file and the font file.
+
+## Viewing font links
+
+Font links appear in the **Related Files** section of the file detail panel:
+
+- On a **LightBurn file**: Shows "Uses Font: FontName.ttf"
+- On a **font file**: Shows "Used By: MyDesign.lbrn2"
+
+Click any linked file to navigate to it.
+
+## Font preview
+
+Font files (TTF, OTF, WOFF, WOFF2) get their own preview that shows:
+
+- Uppercase alphabet
+- Lowercase alphabet
+- Numbers
+- A pangram ("The quick brown fox...")
+- Sample text at multiple sizes
+
+## Extracted font names
+
+The fonts extracted from a LightBurn file are also displayed as chips in the LightBurn metadata panel, so you can see at a glance which fonts a design requires.

@@ -1,0 +1,37 @@
+---
+title: Deep Search for LightBurn
+description: Find LightBurn files by searching for text elements, layer names, or cut settings.
+---
+
+Deep search is particularly powerful with LightBurn files because MakerVault indexes all the embedded content that you'd normally need to open each file individually to find.
+
+## Searchable content
+
+When you use [deep search](/search-filtering/deep-search) (prefix with `/`), these LightBurn-specific fields are searchable:
+
+| Content | Example search | What it finds |
+|---|---|---|
+| **Text elements** | `/HOME` | Files with "HOME" as a text object |
+| **Layer names** | `/Tumblers` | Files with a layer named "Tumblers" |
+| **Cut type** | `/Scan` | Files with Scan (engrave) layers |
+| **Speed values** | `/300` | Files with speed set to 300 |
+| **Power values** | `/85` | Files with power set to 85% |
+| **Font names** | `/Arial` | Files using the Arial font |
+| **Show notes** | `/acrylic` | Files with "acrylic" in their notes |
+
+## Real-world example
+
+Say you engraved tumblers last month and want to reuse those settings. You know the layer was called "Tumblers" but can't remember which file it was:
+
+```
+/Tumblers
+```
+
+MakerVault instantly shows you every LightBurn file with a layer named "Tumblers", along with the cut settings (speed, power, interval) right in the detail panel. No need to open each file in LightBurn to check.
+
+## Combining with filters
+
+Deep search works with all other filters. For example:
+
+- `/HOME` + Tag: "Christmas" = LightBurn files with "HOME" text, tagged Christmas
+- `/Scan` + Type: "LightBurn" = Only LightBurn files with Scan layers (though deep search already narrows to files with extractable content)

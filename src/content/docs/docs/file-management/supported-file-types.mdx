@@ -1,0 +1,77 @@
+---
+title: Supported File Types
+description: All 25+ file types MakerVault can index, search, and preview.
+---
+
+MakerVault supports over 25 file types commonly used by makers. Adding support for new file types requires no code changes throughout the app — it's handled by a single extensible registry.
+
+## Vector Design Files
+
+| Extension | Format | Preview |
+|---|---|---|
+| `.svg` | SVG | Native rendering |
+| `.dxf` | DXF (AutoCAD) | Placeholder |
+| `.ai` | Adobe Illustrator | Image conversion |
+| `.eps` | EPS | Image conversion |
+| `.cdr` | CorelDRAW | Placeholder |
+
+## Laser Cutter & CNC Software
+
+| Extension | Software | Metadata Extraction |
+|---|---|---|
+| `.lbrn` | LightBurn | Notes, cut settings, text, fonts |
+| `.lbrn2` | LightBurn | Notes, cut settings, text, fonts |
+| `.xcs` | xTool Creative Space | — |
+| `.rd` | RDWorks | — |
+| `.crv` | VCarve Pro | — |
+| `.crv3d` | Aspire | — |
+
+## G-code & CNC
+
+| Extension | Format | Preview |
+|---|---|---|
+| `.gcode` | G-code | First 200 lines |
+| `.nc` | G-code (NC) | First 200 lines |
+| `.tap` | G-code (TAP) | First 200 lines |
+
+## 3D Printer Files
+
+| Extension | Format |
+|---|---|
+| `.stl` | STL |
+| `.3mf` | 3MF |
+| `.obj` | OBJ |
+
+## Raster Images
+
+| Extension | Format | Preview |
+|---|---|---|
+| `.png` | PNG | Native rendering |
+| `.jpg` / `.jpeg` | JPEG | Native rendering |
+| `.webp` | WebP | Native rendering |
+| `.bmp` | BMP | Native rendering |
+| `.gif` | GIF | Native rendering |
+| `.tif` / `.tiff` | TIFF | Converted to PNG |
+
+## Documents
+
+| Extension | Format | Preview |
+|---|---|---|
+| `.pdf` | PDF | First page rendered |
+
+## Fonts
+
+| Extension | Format | Preview |
+|---|---|---|
+| `.ttf` | TrueType Font | Sample glyphs at multiple sizes |
+| `.otf` | OpenType Font | Sample glyphs at multiple sizes |
+| `.woff` | Web Open Font | Sample glyphs at multiple sizes |
+| `.woff2` | Web Open Font 2 | Sample glyphs at multiple sizes |
+
+## Filter by file type
+
+In the search bar filter popup, file types are grouped by their software name (e.g., "LightBurn") rather than by extension. This means selecting "LightBurn" shows both `.lbrn` and `.lbrn2` files. You can also filter by category: Vector, Raster, G-code, 3D, Project, Document, or Font.
+
+## Hiding fonts
+
+If your folders contain many font files that clutter your file list, you can toggle **Hide Fonts** in the [filter popup](/search-filtering/filter-popup) to exclude them from view. Your fonts stay indexed and searchable — they're just hidden from the main file list until you turn the filter off.

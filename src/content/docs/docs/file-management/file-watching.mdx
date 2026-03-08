@@ -1,0 +1,31 @@
+---
+title: Real-Time File Watching
+description: How MakerVault automatically detects new, modified, and deleted files.
+---
+
+MakerVault uses a background file watcher to keep your library in sync with your filesystem in real-time. No manual re-scan needed.
+
+## What gets detected
+
+| Event | What happens |
+|---|---|
+| **New file** | Automatically indexed if it has a supported extension |
+| **Modified file** | Metadata and content hash are updated |
+| **Deleted file** | Marked as missing in MakerVault |
+| **Renamed file** | Old path marked as missing, new path indexed |
+
+## Debouncing
+
+File system events are debounced with a 500ms window. This prevents MakerVault from processing the same file multiple times when an app saves a file (which often triggers multiple write events).
+
+## Startup reconciliation
+
+When MakerVault launches, it performs a quick stat check on all indexed files to catch any changes that happened while the app was closed. Files that no longer exist are flagged as missing.
+
+## Missing files
+
+When a file is detected as missing (deleted or moved outside MakerVault), it remains in your library with a visual indicator. Your tags, notes, and metadata are preserved in case the file reappears.
+
+## Content hashing
+
+After a file is indexed or modified, MakerVault computes a BLAKE3 content hash in the background. This hash is used for [duplicate detection](/file-management/duplicate-detection) and is not computed on the main thread, so it never blocks the UI.

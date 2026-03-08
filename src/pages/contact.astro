@@ -1,0 +1,53 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+---
+
+<MarketingLayout title="Contact us" description="Get in touch with the MakerVault team.">
+  <div class="container mx-auto px-4 max-w-xl pt-24 pb-16">
+    <div class="mb-12 pt-8 text-center">
+      <h1 class="mb-2 font-bold text-5xl">Contact us</h1>
+      <p class="text-balance text-lg opacity-50">
+        We are here to help you. Please use the form below to get in touch with us.
+      </p>
+    </div>
+
+    <form class="space-y-4" action="mailto:hello@makervaultapp.com" method="GET">
+      <div>
+        <label for="name" class="block text-sm font-medium mb-1">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="w-full rounded-md border bg-background px-4 py-2 text-sm text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring"
+          required
+        />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium mb-1">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="w-full rounded-md border bg-background px-4 py-2 text-sm text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring"
+          required
+        />
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium mb-1">Message</label>
+        <textarea
+          id="message"
+          name="body"
+          rows="5"
+          class="w-full rounded-md border bg-background px-4 py-2 text-sm text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+          required
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="w-full rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground text-sm hover:bg-primary/90 transition-colors"
+      >
+        Send message
+      </button>
+    </form>
+  </div>
+</MarketingLayout>

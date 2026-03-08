@@ -1,0 +1,35 @@
+---
+title: Notes
+description: Add personal notes to any file with auto-save.
+---
+
+MakerVault lets you attach personal notes to any file. Notes are saved to the local database, not to the file itself, so your original files are never modified.
+
+## Adding notes
+
+1. Select a file to open the detail panel.
+2. Click **Add note** (or click in the existing notes area).
+3. Type your note.
+4. Notes auto-save with a debounced delay — no save button needed.
+
+You can also add notes from the expanded file row inline view.
+
+## Two types of notes
+
+MakerVault distinguishes between two types of notes:
+
+### My Notes (user notes)
+
+Notes you write yourself. These are fully editable and searchable.
+
+### Source Notes (extracted metadata)
+
+Notes extracted from inside the file. For LightBurn files, this includes the "Show Notes" content that's embedded in the file. Source notes are read-only and displayed separately from your personal notes.
+
+## Searching notes
+
+Both note types are included in the [search index](/search-filtering/basic-search). You can also use the [filter popup](/search-filtering/filter-popup) to filter by files that have notes, with optional keyword search within the notes.
+
+## Notes in export
+
+When you [export your library](/data-management/export-import), all notes are included in the export JSON file and can be imported into another MakerVault instance.

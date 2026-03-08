@@ -1,0 +1,48 @@
+---
+title: Watched Folders
+description: How MakerVault monitors your folders for design files.
+---
+
+Watched folders are the foundation of MakerVault. Each watched folder is a directory on your computer that MakerVault scans and monitors for design files.
+
+## How it works
+
+When you add a watched folder, MakerVault:
+
+1. Recursively walks the entire directory tree
+2. Identifies files with supported extensions
+3. Indexes each file's name, path, size, type, and modification date
+4. Extracts metadata from supported file types (like LightBurn files)
+5. Computes a BLAKE3 content hash for duplicate detection
+6. Starts a background file watcher for real-time updates
+
+## Managing folders
+
+### Adding
+
+Click **Add Folder** in the sidebar or use the welcome screen. Select any folder on your computer.
+
+### Filtering
+
+Click a folder name in the sidebar to show only files from that folder. Click **All Files** to see everything.
+
+### Removing
+
+Right-click a folder and select **Remove**. This removes the folder from MakerVault's index. Your actual files on disk are never modified or deleted.
+
+## Performance
+
+MakerVault scans files extremely fast:
+
+- **5,000 files** in under 1 second
+- Files are inserted in batches of 500 per database transaction
+- Content hashing runs in the background so it doesn't block the UI
+
+## Hidden files
+
+MakerVault automatically skips all hidden files and directories, including:
+
+- `.DS_Store` files
+- `._` macOS resource forks
+- `.git` directories
+- Any file or folder starting with `.`

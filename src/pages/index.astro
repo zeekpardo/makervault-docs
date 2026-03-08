@@ -1,0 +1,18 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import Hero from '../components/Hero';
+import ProblemSection from '../components/ProblemSection';
+import Features from '../components/Features';
+import PricingSection from '../components/PricingSection';
+import FaqSection from '../components/FaqSection';
+import Newsletter from '../components/Newsletter';
+---
+
+<MarketingLayout>
+  <Hero />
+  <ProblemSection />
+  <Features />
+  <PricingSection />
+  <FaqSection client:visible />
+  <Newsletter />
+</MarketingLayout>

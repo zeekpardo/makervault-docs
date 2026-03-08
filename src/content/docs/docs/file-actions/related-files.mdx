@@ -1,0 +1,40 @@
+---
+title: Related Files
+description: Link files together with relationship types like derived from, variant, and uses font.
+---
+
+MakerVault lets you create bidirectional links between related files. This is useful for tracking how files relate to each other — for example, linking a LightBurn project to the SVG it was derived from, or linking a design to its exported G-code.
+
+## Relationship types
+
+| Type | Reverse | Use case |
+|---|---|---|
+| **Derived From** | Source File | "This LightBurn file was made from this SVG" |
+| **Source File** | Derived From | The original file another was created from |
+| **Variant** | Variant | Alternative versions of the same design |
+| **Export** | Export | An exported output (G-code, PDF, etc.) |
+| **Reference** | Reference | General relationship between files |
+| **Uses Font** | Used By | A design file that uses a specific font |
+
+## Creating links
+
+1. Select a file and open the detail panel.
+2. Scroll to the **Related Files** section.
+3. Click **Link File**.
+4. Search for the file you want to link to.
+5. Select a relationship type.
+6. Click **Link**.
+
+## Viewing links
+
+Related files appear in the detail panel with:
+
+- The linked file's name (clickable to navigate to it)
+- A relationship badge (e.g., "Derived From", "Variant")
+- A remove button to delete the link
+
+Links are bidirectional. If File A is "derived from" File B, then File B shows File A as a "source file".
+
+## Auto-linking
+
+MakerVault automatically creates "uses font" links between LightBurn files and font files when it detects matching font names. See [Font Auto-Linking](/lightburn/font-linking) for details.
