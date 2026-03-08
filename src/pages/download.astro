@@ -1,7 +1,16 @@
 ---
 import MarketingLayout from '../layouts/MarketingLayout.astro';
 
-const version = '0.1.0';
+// Fetch latest published release version from GitHub API at build time
+let version = '0.2.0'; // fallback
+try {
+  const res = await fetch('https://api.github.com/repos/zeekpardo/makervault/releases/latest');
+  if (res.ok) {
+    const data = await res.json();
+    version = data.tag_name.replace(/^v/, '');
+  }
+} catch {}
+
 const baseUrl = `https://github.com/zeekpardo/makervault/releases/latest/download`;
 const macDmg = `${baseUrl}/MakerVault_${version}_universal.dmg`;
 const winExe = `${baseUrl}/MakerVault_${version}_x64-setup.exe`;

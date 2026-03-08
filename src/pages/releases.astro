@@ -1,0 +1,159 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+
+// Fetch all published releases from GitHub API at build time
+type Asset = { name: string; browser_download_url: string; size: number };
+type Release = { tag_name: string; published_at: string; body: string; assets: Asset[] };
+
+let releases: Release[] = [];
+try {
+  const res = await fetch('https://api.github.com/repos/zeekpardo/makervault/releases?per_page=50');
+  if (res.ok) {
+    const data = await res.json();
+    releases = data.filter((r: any) => !r.draft && !r.prerelease);
+  }
+} catch {}
+
+// Extract only installer assets (no source code, no updater json, no sig files)
+const installerExts = ['.dmg', '.exe', '.msi'];
+
+function getAssets(release: Release, platform: 'mac' | 'windows') {
+  return release.assets.filter((a: Asset) => {
+    const name = a.name.toLowerCase();
+    if (!installerExts.some(ext => name.endsWith(ext))) return false;
+    if (platform === 'mac') return name.endsWith('.dmg');
+    return name.endsWith('.exe') || name.endsWith('.msi');
+  });
+}
+
+function formatSize(bytes: number) {
+  const mb = bytes / (1024 * 1024);
+  return `${mb.toFixed(1)} MB`;
+}
+
+function formatDate(iso: string) {
+  return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+---
+
+<MarketingLayout title="Past Releases — MakerVault" description="Download previous versions of MakerVault for macOS and Windows.">
+  <div class="container mx-auto px-4 max-w-3xl pt-24 pb-16">
+    <div class="pt-8 text-center mb-10">
+      <h1 class="mb-2 font-bold text-4xl">Past Releases</h1>
+      <p class="text-lg opacity-50">Download previous versions of MakerVault.</p>
+      <p class="mt-2 text-sm opacity-40">
+        Looking for the latest version? <a href="/download" class="underline hover:opacity-70">Download here</a>
+      </p>
+    </div>
+
+    <!-- Platform filter tabs -->
+    <div class="flex justify-center gap-2 mb-8" id="platform-filter">
+      <button data-platform="all" class="px-4 py-2 rounded-md text-sm font-medium bg-primary text-primary-foreground transition-colors">
+        All
+      </button>
+      <button data-platform="mac" class="px-4 py-2 rounded-md text-sm font-medium bg-muted text-foreground/60 hover:bg-muted/80 transition-colors">
+        macOS
+      </button>
+      <button data-platform="windows" class="px-4 py-2 rounded-md text-sm font-medium bg-muted text-foreground/60 hover:bg-muted/80 transition-colors">
+        Windows
+      </button>
+    </div>
+
+    {releases.length === 0 ? (
+      <p class="text-center text-foreground/50">No releases found.</p>
+    ) : (
+      <div class="flex flex-col gap-4" id="releases-list">
+        {releases.map((release) => {
+          const macAssets = getAssets(release, 'mac');
+          const winAssets = getAssets(release, 'windows');
+          const hasMac = macAssets.length > 0;
+          const hasWin = winAssets.length > 0;
+
+          return (
+            <div
+              class="rounded-xl border bg-card p-5 release-card"
+              data-has-mac={hasMac}
+              data-has-windows={hasWin}
+            >
+              <div class="flex items-center justify-between mb-3">
+                <div>
+                  <h2 class="text-lg font-semibold">{release.tag_name}</h2>
+                  <p class="text-xs text-foreground/40">{formatDate(release.published_at)}</p>
+                </div>
+                <div class="flex gap-1.5">
+                  {hasMac && (
+                    <span class="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-foreground/60">
+                      macOS
+                    </span>
+                  )}
+                  {hasWin && (
+                    <span class="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-foreground/60">
+                      Windows
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                {macAssets.map((asset: Asset) => (
+                  <a
+                    href={asset.browser_download_url}
+                    class="mac-asset inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm hover:bg-accent transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    <span>{asset.name}</span>
+                    <span class="text-xs text-foreground/40">{formatSize(asset.size)}</span>
+                  </a>
+                ))}
+                {winAssets.map((asset: Asset) => (
+                  <a
+                    href={asset.browser_download_url}
+                    class="win-asset inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm hover:bg-accent transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    <span>{asset.name}</span>
+                    <span class="text-xs text-foreground/40">{formatSize(asset.size)}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    )}
+  </div>
+
+  <script is:inline>
+    document.getElementById('platform-filter')?.addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      const platform = btn.dataset.platform;
+
+      // Update active button style
+      document.querySelectorAll('#platform-filter button').forEach(b => {
+        b.className = b === btn
+          ? 'px-4 py-2 rounded-md text-sm font-medium bg-primary text-primary-foreground transition-colors'
+          : 'px-4 py-2 rounded-md text-sm font-medium bg-muted text-foreground/60 hover:bg-muted/80 transition-colors';
+      });
+
+      // Filter cards and assets
+      document.querySelectorAll('.release-card').forEach(card => {
+        const hasMac = card.dataset.hasMac === 'true';
+        const hasWin = card.dataset.hasWindows === 'true';
+
+        if (platform === 'all') {
+          card.style.display = '';
+          card.querySelectorAll('.mac-asset, .win-asset').forEach(a => a.style.display = '');
+        } else if (platform === 'mac') {
+          card.style.display = hasMac ? '' : 'none';
+          card.querySelectorAll('.mac-asset').forEach(a => a.style.display = '');
+          card.querySelectorAll('.win-asset').forEach(a => a.style.display = 'none');
+        } else {
+          card.style.display = hasWin ? '' : 'none';
+          card.querySelectorAll('.win-asset').forEach(a => a.style.display = '');
+          card.querySelectorAll('.mac-asset').forEach(a => a.style.display = 'none');
+        }
+      });
+    });
+  </script>
+</MarketingLayout>
