@@ -3,19 +3,61 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 
 const entries = [
   {
-    date: "2026-01-30",
-    title: "Performance Improvements",
-    changes: ["Improved performance"],
+    date: "2026-03-07",
+    title: "File Management & Filtering",
+    changes: [
+      "Delete files — move duplicates to system Trash from the Duplicates view",
+      "Rename files — right-click any file to rename it on disk",
+      "Hide Fonts filter — exclude font files from your main file list",
+      "Ignore duplicate groups — dismiss intentional duplicates from the list",
+      "Exclude categories filter for hiding unwanted file types",
+    ],
   },
   {
-    date: "2026-01-26",
-    title: "Design Updates",
-    changes: ["Updated design", "Fixed a bug"],
+    date: "2026-02-20",
+    title: "Auto-Updates & Licensing",
+    changes: [
+      "Auto-updater with license-gated update notifications",
+      "Switched to LemonSqueezy for payment processing",
+      "Updates expiration tracking with renewal flow",
+      "7-day free trial (reduced from 14 days)",
+      "App icons and icon generation script",
+    ],
   },
   {
-    date: "2026-01-12",
-    title: "New Features",
-    changes: ["Added new feature", "Fixed a bug"],
+    date: "2026-02-05",
+    title: "Tags & Sources",
+    changes: [
+      "Colored tag badges in file list for visual organization",
+      "Nested tag picker with two-step add flow",
+      "Source quick-create from pasted URLs",
+      "Sidebar simplification and UI improvements",
+    ],
+  },
+  {
+    date: "2026-01-20",
+    title: "File Linking & Detail Panel",
+    changes: [
+      "Bidirectional file linking with relationship types (derived from, variant, export, reference)",
+      "LightBurn font auto-linking — automatically links font files used in designs",
+      "Inline preview in detail panel for previewable files",
+      "Expandable file rows with 3-column layout",
+      "Windows support groundwork",
+    ],
+  },
+  {
+    date: "2026-01-05",
+    title: "Initial Release",
+    changes: [
+      "Full-text search with deep search (/ prefix) for searching inside file contents",
+      "Hierarchical tagging with nested tags up to 3 levels deep",
+      "Spacebar quick preview for SVG, images, PDF, fonts, and LightBurn files",
+      "LightBurn metadata extraction (cut settings, notes, fonts, text elements)",
+      "Real-time file watching with automatic indexing of 25+ file types",
+      "Duplicate detection with BLAKE3 content hashing",
+      "Source tracking with auto-detection from URLs",
+      "Multi-filter system combining file type, tags, sources, favorites, and notes",
+    ],
   },
 ];
 

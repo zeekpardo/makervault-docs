@@ -6,9 +6,36 @@ import Features from '../components/Features';
 import PricingSection from '../components/PricingSection';
 import FaqSection from '../components/FaqSection';
 import Newsletter from '../components/Newsletter';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MakerVault",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "macOS",
+  "description": "Local-first desktop file organizer for makers. Search, tag, and preview laser cutter, CNC, and 3D printing design files instantly.",
+  "url": "https://makervaultapp.com",
+  "image": "https://makervaultapp.com/og-image.png",
+  "offers": {
+    "@type": "Offer",
+    "price": "59.00",
+    "priceCurrency": "USD",
+    "description": "One-time purchase. Includes 1 year of updates. Keep the app forever."
+  },
+  "featureList": [
+    "Full-text search across filenames, tags, notes, and file contents",
+    "Hierarchical tagging with nested tags up to 3 levels deep",
+    "Spacebar quick preview for SVG, images, PDF, fonts, and LightBurn files",
+    "LightBurn metadata extraction (cut settings, notes, fonts, text)",
+    "Real-time file watching with automatic indexing",
+    "Duplicate file detection",
+    "Source tracking for file origins"
+  ]
+};
 ---
 
 <MarketingLayout>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <Hero />
   <ProblemSection />
   <Features />

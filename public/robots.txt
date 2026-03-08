@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://makervaultapp.com/sitemap-index.xml

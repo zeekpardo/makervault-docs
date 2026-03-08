@@ -2,11 +2,42 @@
 import MarketingLayout from '../../layouts/MarketingLayout.astro';
 ---
 
-<MarketingLayout title="Privacy Policy">
+<MarketingLayout title="Privacy Policy" description="MakerVault privacy policy. Your files stay on your machine — we don't collect or transmit your design files.">
   <div class="container mx-auto px-4 max-w-2xl pt-24 pb-16">
     <h1 class="mb-8 text-center font-bold text-4xl">Privacy Policy</h1>
     <div class="prose dark:prose-invert max-w-none">
-      <p>This is the placeholder page for your privacy policy. Update this page with your actual privacy policy content.</p>
+      <p><strong>Last updated:</strong> March 7, 2026</p>
+
+      <h2>Overview</h2>
+      <p>MakerVault is a local-first desktop application. Your design files, tags, notes, and metadata are stored entirely on your computer. We do not collect, transmit, or have access to your files.</p>
+
+      <h2>What we collect</h2>
+      <ul>
+        <li><strong>License activation:</strong> When you activate a license key, we verify it with our licensing server. This transmits your license key and a machine identifier. No file data is sent.</li>
+        <li><strong>Update checks:</strong> MakerVault periodically checks for software updates via GitHub Releases. No personal data is sent during this check.</li>
+        <li><strong>Contact form:</strong> If you contact us through our website, we receive the information you submit (name, email, message).</li>
+        <li><strong>Newsletter:</strong> If you subscribe to our newsletter, we store your email address with our email service provider.</li>
+      </ul>
+
+      <h2>What we don't collect</h2>
+      <ul>
+        <li>Your design files or their contents</li>
+        <li>Your tags, notes, or metadata</li>
+        <li>Usage analytics or telemetry</li>
+        <li>Browsing or search history within the app</li>
+      </ul>
+
+      <h2>Data storage</h2>
+      <p>All application data (file index, tags, notes, sources, preferences) is stored in a local SQLite database on your computer. We have no access to this data.</p>
+
+      <h2>Third-party services</h2>
+      <ul>
+        <li><strong>LemonSqueezy:</strong> Payment processing and license management. Subject to <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener">LemonSqueezy's privacy policy</a>.</li>
+        <li><strong>GitHub:</strong> Software update distribution.</li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>Questions about this policy? Email us at <a href="mailto:hello@makervaultapp.com">hello@makervaultapp.com</a>.</p>
     </div>
   </div>
 </MarketingLayout>

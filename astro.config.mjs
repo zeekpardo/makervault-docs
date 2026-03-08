@@ -3,11 +3,13 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://makervaultapp.com',
   integrations: [
+    sitemap(),
     starlight({
       title: 'MakerVault Docs',
       logo: {
