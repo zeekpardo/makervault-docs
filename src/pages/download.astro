@@ -1,20 +1,26 @@
 ---
 import MarketingLayout from '../layouts/MarketingLayout.astro';
 
-// Fetch latest published release version from GitHub API at build time
-let version = '0.2.0'; // fallback
+// Fetch latest published release from GitHub API at build time
+// Use actual asset URLs to avoid tag/filename mismatch 404s
+let version = '0.2.0';
+let macDmg = '';
+let winExe = '';
 try {
   const res = await fetch('https://api.github.com/repos/zeekpardo/makervault/releases/latest');
   if (res.ok) {
     const data = await res.json();
     version = data.tag_name.replace(/^v/, '');
+    for (const asset of data.assets) {
+      const name = asset.name.toLowerCase();
+      if (name.endsWith('.dmg')) macDmg = asset.browser_download_url;
+      if (name.endsWith('.exe') && name.includes('setup')) winExe = asset.browser_download_url;
+    }
   }
 } catch {}
-
-const baseUrl = `https://github.com/zeekpardo/makervault/releases/latest/download`;
-const macDmg = `${baseUrl}/MakerVault_${version}_universal.dmg`;
-const winExe = `${baseUrl}/MakerVault_${version}_x64-setup.exe`;
-const releasesUrl = 'https://github.com/zeekpardo/makervault/releases/latest';
+// Fallback if API didn't return assets
+if (!macDmg) macDmg = `https://github.com/zeekpardo/makervault/releases/download/v${version}/MakerVault_${version}_universal.dmg`;
+if (!winExe) winExe = `https://github.com/zeekpardo/makervault/releases/download/v${version}/MakerVault_${version}_x64-setup.exe`;
 ---
 
 <MarketingLayout title="Download MakerVault" description="Download MakerVault for macOS and Windows. 7-day free trial, no credit card required.">
