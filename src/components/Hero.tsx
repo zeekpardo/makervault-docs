@@ -25,7 +25,7 @@ export default function Hero() {
 
         <div className="mt-6 flex items-center justify-start gap-3">
           <a
-            href="#pricing"
+            href="/download"
             className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground text-sm hover:bg-primary/90 transition-colors"
           >
             <DownloadIcon className="mr-2 size-4" />
