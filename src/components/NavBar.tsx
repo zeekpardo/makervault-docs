@@ -7,7 +7,6 @@ const menuItems = [
   { label: "Pricing", href: "/#pricing" },
   { label: "FAQ", href: "/#faq" },
   { label: "Download", href: "/download" },
-  { label: "Releases", href: "/releases" },
   { label: "Contact", href: "/contact" },
   { label: "Docs", href: "/docs", external: false },
 ];
