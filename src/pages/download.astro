@@ -6,8 +6,11 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 let version = '0.2.0';
 let macDmg = '';
 let winExe = '';
+const ghToken = import.meta.env.GITHUB_TOKEN ?? '';
+const headers: Record<string, string> = { Accept: 'application/vnd.github+json' };
+if (ghToken) headers.Authorization = `Bearer ${ghToken}`;
 try {
-  const res = await fetch('https://api.github.com/repos/zeekpardo/makervault/releases/latest');
+  const res = await fetch('https://api.github.com/repos/zeekpardo/makervault/releases/latest', { headers });
   if (res.ok) {
     const data = await res.json();
     version = data.tag_name.replace(/^v/, '');

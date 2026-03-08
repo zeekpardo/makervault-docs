@@ -5,9 +5,13 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 type Asset = { name: string; browser_download_url: string; size: number };
 type Release = { tag_name: string; published_at: string; body: string; assets: Asset[] };
 
+const ghToken = import.meta.env.GITHUB_TOKEN ?? '';
+const headers: Record<string, string> = { Accept: 'application/vnd.github+json' };
+if (ghToken) headers.Authorization = `Bearer ${ghToken}`;
+
 let releases: Release[] = [];
 try {
-  const res = await fetch('https://api.github.com/repos/zeekpardo/makervault/releases?per_page=50');
+  const res = await fetch('https://api.github.com/repos/zeekpardo/makervault/releases?per_page=50', { headers });
   if (res.ok) {
     const data = await res.json();
     releases = data.filter((r: any) => !r.draft && !r.prerelease);
