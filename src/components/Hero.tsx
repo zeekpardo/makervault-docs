@@ -1,15 +1,27 @@
-import { ArrowRightIcon, DownloadIcon } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ArrowRightIcon, SparklesIcon, PlayIcon, XIcon } from "lucide-react";
+
+const VIDEO_ID = "RwB6kp83Gyw";
 
 export default function Hero() {
+  const [videoOpen, setVideoOpen] = useState(false);
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setVideoOpen(false);
+    };
+    if (videoOpen) document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [videoOpen]);
+
   return (
     <div className="relative max-w-full overflow-x-hidden">
       <div className="container mx-auto px-4 relative z-20 pt-24 pb-12 lg:pb-16">
         <div className="mb-4 flex justify-start">
           <div className="flex flex-wrap items-center justify-start rounded-full bg-primary/10 px-3 py-1 font-normal text-primary text-sm">
-            <span className="flex items-center gap-2 rounded-full font-semibold">macOS</span>
-            <span className="ml-1 block font-medium">
-              7-day free trial, no credit card required
-            </span>
+            <SparklesIcon className="mr-1.5 size-3.5" />
+            <span className="font-semibold">Coming Soon</span>
+            <span className="ml-1 block font-medium">— be first to know when we launch</span>
           </div>
         </div>
 
@@ -23,26 +35,22 @@ export default function Hero() {
           instantly. Your files stay on your machine. No cloud. No subscription.
         </p>
 
-        <div className="mt-6 flex items-center justify-start gap-3">
+        <div className="mt-6 flex flex-wrap items-center justify-start gap-3">
           <a
-            href="/download"
+            href="#waitlist"
             className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground text-sm hover:bg-primary/90 transition-colors"
           >
-            <DownloadIcon className="mr-2 size-4" />
-            Download Free Trial
-          </a>
-          <a
-            href="#features"
-            className="inline-flex items-center justify-center rounded-md px-6 py-3 font-medium text-foreground text-sm hover:bg-accent transition-colors"
-          >
-            See Features
+            Join the Waitlist
             <ArrowRightIcon className="ml-2 size-4" />
           </a>
+          <button
+            onClick={() => setVideoOpen(true)}
+            className="inline-flex items-center justify-center rounded-md px-6 py-3 font-medium text-foreground text-sm hover:bg-accent transition-colors"
+          >
+            <PlayIcon className="mr-2 size-4" />
+            Watch how it works
+          </button>
         </div>
-
-        <p className="mt-3 text-foreground/40 text-xs">
-          One-time purchase of $59. Includes 1 year of updates. Keep the app forever.
-        </p>
 
         <div className="mx-auto mt-12 lg:mt-16 xl:mt-24 rounded-3xl bg-primary/5 p-4 border">
           <img
@@ -78,6 +86,35 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {videoOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setVideoOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-4xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setVideoOpen(false)}
+              className="absolute -top-10 right-0 text-white/70 hover:text-white transition-colors"
+              aria-label="Close video"
+            >
+              <XIcon className="size-6" />
+            </button>
+            <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-2xl">
+              <iframe
+                src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0`}
+                title="MakerVault — how it works"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

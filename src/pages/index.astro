@@ -3,7 +3,7 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 import Hero from '../components/Hero';
 import ProblemSection from '../components/ProblemSection';
 import Features from '../components/Features';
-import PricingSection from '../components/PricingSection';
+import Newsletter from '../components/Newsletter';
 import FaqSection from '../components/FaqSection';
 
 
@@ -36,9 +36,9 @@ const jsonLd = {
 
 <MarketingLayout>
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-  <Hero />
+  <Hero client:load />
   <ProblemSection />
   <Features />
-  <PricingSection />
+  <Newsletter />
   <FaqSection client:visible />
 </MarketingLayout>
