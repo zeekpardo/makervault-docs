@@ -1,0 +1,40 @@
+---
+title: LightBurn Canvas Preview
+description: See the actual cut layers and shapes from a LightBurn file without opening LightBurn.
+---
+
+MakerVault renders an interactive SVG canvas preview for `.lbrn` and `.lbrn2` files. This shows you the actual cut layers, shapes, and text from the file — not just an embedded thumbnail.
+
+## How it works
+
+When you preview a LightBurn file, MakerVault parses the XML structure of the file and builds an SVG representation of all shapes on the canvas. Each shape is colored by its cut layer, so the canvas looks like what you see inside LightBurn.
+
+This works entirely offline with no need to have LightBurn installed or open.
+
+## Pan and zoom
+
+The canvas preview supports:
+
+- **Pan** — Click and drag to move around the canvas.
+- **Zoom** — Scroll to zoom in or out. The zoom range is wide enough to inspect fine details.
+
+## Where it appears
+
+The canvas preview is available in two places:
+
+- **Right sidebar** — Shown automatically when you select a LightBurn file.
+- **Full-screen preview** — Press **Space** or double-click the sidebar preview to open full-screen.
+
+## Preview mode toggle
+
+LightBurn files offer a toggle to switch between preview modes:
+
+- **Canvas** (or **2D** in the sidebar) — The interactive SVG canvas.
+- **PNG** — The embedded thumbnail image baked into the file by LightBurn.
+- **Photo** — Your custom uploaded photo, if one has been set.
+
+The mode you select in the sidebar is preserved when you open the full-screen preview.
+
+## When canvas is unavailable
+
+If a LightBurn file is empty or contains no renderable shapes, the canvas preview shows a blank canvas. All metadata (cut settings, notes, text elements) is still extracted and displayed normally.

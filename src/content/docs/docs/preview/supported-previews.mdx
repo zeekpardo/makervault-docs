@@ -15,27 +15,35 @@ These file types render directly in the preview:
 | **PNG, JPG, WebP, BMP, GIF** | Native image rendering |
 | **TIFF** | Converted to PNG via macOS `sips` |
 | **PDF** | First page rendered via macOS `sips` conversion |
-| **AI, EPS** | Rendered via macOS `sips` PNG conversion |
+| **AI, EPS** | Rendered via Ghostscript (requires `brew install ghostscript`) |
 | **TTF, OTF, WOFF, WOFF2** | Font sample showing uppercase, lowercase, numbers, pangram at multiple sizes |
 | **G-code, NC, TAP** | Plain text preview of the first 200 lines |
 
 ## LightBurn files
 
-LightBurn files (`.lbrn` and `.lbrn2`) get special treatment:
+LightBurn files (`.lbrn` and `.lbrn2`) have two preview modes available via a toggle:
 
-- If the file contains an embedded thumbnail, MakerVault extracts and displays it
-- The metadata panel shows cut settings (layer name, type, speed, power)
-- Text elements and notes from the file are displayed
-- Falls back to a placeholder if no thumbnail is embedded
+- **Canvas** — An interactive SVG canvas that renders the actual cut layers, shapes, and text from the file. Supports pan (click and drag) and zoom (scroll wheel).
+- **PNG** — The embedded thumbnail image baked into the file by LightBurn. Falls back gracefully if no thumbnail is present.
+
+The metadata panel always shows cut settings (layer name, type, speed, power) alongside the preview.
+
+## 3D files
+
+STL and 3MF files render in an interactive 3D viewer with orbit controls. Click and drag to rotate, scroll to zoom. The model auto-fits to fill the preview area on load.
+
+## EPS and AI files
+
+EPS and AI previews are generated via Ghostscript. If Ghostscript is not installed, MakerVault shows a clean "not supported" message with instructions to install it (`brew install ghostscript`). There is no error — the file is still fully indexed and searchable.
+
+## Custom photo
+
+Any file can have a custom photo (JPEG or PNG) uploaded via the right sidebar. Once uploaded, a **Photo** tab appears in the preview toggle, and the photo becomes the primary thumbnail in grid view.
 
 ## Placeholder preview
 
-File types without native preview support (DXF, CDR, STL, 3MF, OBJ, xTool, RDWorks, VCarve Pro) show a placeholder icon with the file type label. You can still see all metadata and use the "Open in [App]" button to view the file in its native application.
+File types without native preview support (DXF, CDR, OBJ, xTool, RDWorks, VCarve Pro) show a placeholder icon with the file type label. You can still see all metadata and use the "Open in [App]" button to view the file in its native application.
 
-## Expanded file row
+## Right sidebar preview
 
-In addition to the Spacebar overlay, you can expand a file row inline to see a 3-column layout:
-
-1. **Preview** — Thumbnail or rendered preview
-2. **Info + Notes** — File details and editable notes
-3. **Metadata** — Embedded metadata (LightBurn cut settings, etc.)
+Selecting a file shows a preview in the right sidebar. Double-click the sidebar preview to open the full-screen overlay. The sidebar preview supports the same preview mode toggle (Canvas, PNG, Photo) as the full-screen view.

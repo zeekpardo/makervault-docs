@@ -1,0 +1,59 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import WaitlistForm from '../components/WaitlistForm';
+---
+
+<MarketingLayout
+  title="Get Early Access"
+  description="Join the MakerVault waitlist and be first to know when we launch."
+>
+  <div class="container mx-auto px-4 pt-20 pb-24 max-w-5xl">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+      <!-- Left: copy -->
+      <div class="pt-4">
+        <div class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-primary text-sm font-medium mb-6">
+          <span class="relative flex size-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span class="relative inline-flex rounded-full size-2 bg-primary"></span>
+          </span>
+          Now accepting early access signups
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-medium leading-tight text-balance">
+          Be the first to get MakerVault
+        </h1>
+        <p class="mt-4 text-foreground/60 text-base lg:text-lg leading-relaxed">
+          MakerVault is a local-first file organizer built for makers. Find any laser, CNC, or 3D printing file in seconds — no cloud, no subscription.
+        </p>
+
+        <ul class="mt-8 flex flex-col gap-4">
+          {[
+            { title: "Early access", body: "Get the app before it's publicly available." },
+            { title: "Founding price", body: "Lock in a discounted rate available only to waitlist members." },
+            { title: "Shape the product", body: "Your feedback directly influences what we build next." },
+            { title: "No cloud, ever", body: "Your files stay on your machine. Private by default." },
+          ].map(({ title, body }) => (
+            <li class="flex items-start gap-3">
+              <div class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <span class="font-medium text-sm">{title}</span>
+                <span class="text-foreground/60 text-sm"> — {body}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Right: form -->
+      <div class="rounded-3xl border bg-card p-6 lg:p-8">
+        <h2 class="text-xl font-semibold mb-1">Request early access</h2>
+        <p class="text-foreground/60 text-sm mb-6">We'll reach out as soon as a spot opens up.</p>
+        <WaitlistForm client:load />
+      </div>
+
+    </div>
+  </div>
+</MarketingLayout>

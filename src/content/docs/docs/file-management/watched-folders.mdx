@@ -20,15 +20,38 @@ When you add a watched folder, MakerVault:
 
 ### Adding
 
-Click **Add Folder** in the sidebar or use the welcome screen. Select any folder on your computer.
+Click **Add Folder** in the sidebar or use the welcome screen. Select any folder on your computer. The first level of subfolders is expanded in the sidebar by default so you can drill straight into them.
 
 ### Filtering
 
 Click a folder name in the sidebar to show only files from that folder. Click **All Files** to see everything.
 
+### Reordering
+
+Hover over any folder in the sidebar to reveal a grip handle on the left. Drag the handle to reorder folders.
+
 ### Removing
 
 Right-click a folder and select **Remove**. This removes the folder from MakerVault's index. Your actual files on disk are never modified or deleted.
+
+## Syncing macOS fonts
+
+MakerVault can watch your macOS font directories so all your installed fonts appear in the library alongside your design files.
+
+There are two ways to sync fonts:
+
+- **During onboarding** — When you first launch MakerVault, step 2 of the welcome flow offers to sync your fonts.
+- **From the sidebar** — If fonts haven't been synced yet, a font icon appears in the Watched Folders section header. Click it to open a confirmation dialog.
+
+Syncing adds three watched folders:
+
+| Folder | Contents |
+|---|---|
+| `~/Library/Fonts` | Your personal (User) fonts |
+| `/Library/Fonts` | Fonts installed for all users (App fonts) |
+| `/System/Library/Fonts` | macOS system fonts |
+
+Once synced, font files are grouped under a collapsible **Fonts** parent in the sidebar. Clicking the parent filters your file list to show only font files. The font sync icon disappears from the section header once any of these directories are being watched.
 
 ## Performance
 

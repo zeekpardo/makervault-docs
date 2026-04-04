@@ -19,9 +19,23 @@ The preview overlay shows:
 - **Metadata sidebar** — Filename, size, type, tags, notes, and embedded metadata
 - **Open button** — "Open in [App]" to launch the file in its default application
 
+## Preview modes for LightBurn files
+
+LightBurn files show a segmented toggle in the top-right of the preview overlay:
+
+- **Canvas** — An interactive SVG canvas rendering the actual cut layers, shapes, and text from the file. Supports pan and zoom.
+- **PNG** — The embedded thumbnail image baked into the file by LightBurn.
+- **Photo** — Shown only when you have uploaded a custom photo for the file.
+
+Opening full-screen preview preserves whichever mode was active in the right sidebar.
+
+## Custom photo
+
+Any file can have a custom photo (JPEG or PNG) that you upload. Once uploaded, a **Photo** tab appears in the preview toggle. The photo also appears as the primary thumbnail in grid view.
+
 ## Inline preview
 
-Previewable files also show a smaller inline preview directly in the file detail panel on the right sidebar, so you can see a preview without going full-screen.
+Previewable files also show a smaller inline preview directly in the file detail panel on the right sidebar, so you can see a preview without going full-screen. Double-click the inline preview to open the full-screen overlay.
 
 ## Supported types
 

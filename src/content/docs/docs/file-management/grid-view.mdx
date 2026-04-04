@@ -1,0 +1,45 @@
+---
+title: Grid View
+description: Browse your files as thumbnails in the grid view.
+---
+
+MakerVault offers two ways to browse your file library: **list view** and **grid view**. Toggle between them using the icons in the top-right of the toolbar.
+
+## Switching views
+
+- Click the **list icon** (rows) to switch to list view.
+- Click the **grid icon** (squares) to switch to grid view.
+
+Your view preference is saved and restored the next time you open MakerVault.
+
+## What you see in grid view
+
+Each file appears as a card with:
+
+- **Thumbnail** — A rendered preview of the file (SVG, image, font sample, LightBurn canvas, 3D model, or custom photo depending on the file type and your preferences)
+- **Filename** — Truncated if long; hover to see the full name
+- **File size** — Shown below the filename
+- **Favorite star** — Appears on hover (or always, if the file is starred)
+
+Thumbnails load lazily as you scroll, so large libraries stay fast.
+
+## Selecting files
+
+| Action | Result |
+|---|---|
+| **Click** | Select the file and show its details in the right sidebar |
+| **Cmd+click** | Add to / remove from the current selection |
+| **Shift+click** | Select a range from the last-selected file to this one |
+| **Double-click** | Open the file in its default application |
+
+Right-click any card to open the context menu (Open, Reveal in Finder, Rename, etc.).
+
+## Thumbnail priority
+
+The grid thumbnail respects your preview preferences. By default, if a file has a custom uploaded photo it shows first. If there is no custom photo, MakerVault falls back to the auto-rendered preview (canvas for LightBurn files, PNG for images, etc.).
+
+You can change the thumbnail priority in **Settings → Preferences**.
+
+## Bulk select in grid view
+
+Click the **checkbox icon** in the toolbar to enable bulk select mode. Checkboxes appear on each card. Use Cmd+click or Shift+click to select multiple files, then apply tags or other bulk actions.
