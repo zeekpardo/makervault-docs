@@ -92,7 +92,7 @@ export default function WaitlistForm() {
           type="submit"
           className="mt-1 inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground text-sm hover:bg-primary/90 transition-colors"
         >
-          Get Early Access
+          Claim Your Spot
         </button>
 
         <p className="text-center text-xs text-foreground/40">

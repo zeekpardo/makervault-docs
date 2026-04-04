@@ -5,7 +5,7 @@ import { cn } from "../lib/utils";
 const menuItems = [
   { label: "Features", href: "/#features" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Early Access", href: "/waitlist" },
+  { label: "Early Access — 100 spots", href: "/waitlist" },
   { label: "Docs", href: "/docs", external: false },
 ];
 

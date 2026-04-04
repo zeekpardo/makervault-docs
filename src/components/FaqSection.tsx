@@ -4,6 +4,10 @@ import { cn } from "../lib/utils";
 
 const items = [
   {
+    question: "How is MakerVault different from other file organizers?",
+    answer: "Most file organizers give you a visual grid of your files. MakerVault goes deeper. It reads inside your LightBurn and xTool files to extract cut settings, text elements, fonts, and layer data. It lets you search by the text engraved in a design, look up which files use a specific font, link related files together, track where you bought every file, and find true duplicates by content — not just filename. It's a knowledge system for your maker library, not just a prettier folder view.",
+  },
+  {
     question: "What file types does MakerVault support?",
     answer: "MakerVault supports 25+ file types including SVG, DXF, AI, EPS, CDR, STL, 3MF, OBJ, G-code, LightBurn (.lbrn/.lbrn2), xTool, RDWorks, VCarve Pro, PDF, PNG, JPG, WebP, BMP, GIF, TIFF, TTF, OTF, and more. If you work with laser cutters, CNC routers, vinyl cutters, or 3D printers, your files are covered.",
   },

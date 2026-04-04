@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRightIcon, SparklesIcon, PlayIcon, XIcon } from "lucide-react";
+import { ArrowRightIcon, PlayIcon, XIcon } from "lucide-react";
 
 const VIDEO_ID = "RwB6kp83Gyw";
 
@@ -19,20 +19,26 @@ export default function Hero() {
       <div className="container mx-auto px-4 relative z-20 pt-24 pb-12 lg:pb-16">
         <div className="mb-4 flex justify-start">
           <div className="flex flex-wrap items-center justify-start rounded-full bg-primary/10 px-3 py-1 font-normal text-primary text-sm">
-            <SparklesIcon className="mr-1.5 size-3.5" />
-            <span className="font-semibold">Coming Soon</span>
-            <span className="ml-1 block font-medium">— be first to know when we launch</span>
+            <span class="relative flex size-2 mr-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span class="relative inline-flex rounded-full size-2 bg-primary"></span>
+            </span>
+            <span className="font-semibold">Early Access</span>
+            <span className="ml-1 block font-medium">— Limited to 100 makers</span>
           </div>
         </div>
 
         <h1 className="text-balance font-medium text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight text-foreground">
-          Find any design file in seconds
+          Your maker files are a mess. We both know it.
         </h1>
 
         <p className="mt-4 text-foreground/60 text-base sm:text-lg max-w-3xl leading-relaxed">
-          Stop scrolling through folders. MakerVault scans your computer, indexes every
-          laser, CNC, and 3D printing file, and lets you search, tag, and preview them
-          instantly. Your files stay on your machine. No cloud. No subscription.
+          Most makers don't need more files. They need a better way to find the ones they already have.
+          MakerVault gives you a searchable, visual library with previews, tags, cut settings, and font data —
+          without opening a single app.
+        </p>
+        <p className="mt-3 text-foreground/50 text-sm font-medium tracking-wide">
+          Local-first. No cloud. No subscription. One-time purchase.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center justify-start gap-3">
@@ -40,7 +46,7 @@ export default function Hero() {
             href="/waitlist"
             className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground text-sm hover:bg-primary/90 transition-colors"
           >
-            Join the Waitlist
+            Claim Your Early Access Spot
             <ArrowRightIcon className="ml-2 size-4" />
           </a>
           <button

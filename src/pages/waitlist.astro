@@ -17,14 +17,16 @@ import WaitlistForm from '../components/WaitlistForm';
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
             <span class="relative inline-flex rounded-full size-2 bg-primary"></span>
           </span>
-          Now accepting early access signups
+          100 early access spots. That's it.
         </div>
 
         <h1 class="text-4xl lg:text-5xl font-medium leading-tight text-balance">
-          Be the first to get MakerVault
+          Stop losing time looking for files you already own.
         </h1>
         <p class="mt-4 text-foreground/60 text-base lg:text-lg leading-relaxed">
-          MakerVault is a local-first file organizer built for makers. Find any laser, CNC, or 3D printing file in seconds — no cloud, no subscription.
+          Most makers don't need more files. They need a better way to find the ones they already have.
+          MakerVault is a local-first file organizer built for laser cutters, CNC, and 3D printing —
+          no cloud, no subscription, one-time purchase.
         </p>
 
         <ul class="mt-8 flex flex-col gap-4">
@@ -45,12 +47,23 @@ import WaitlistForm from '../components/WaitlistForm';
             </li>
           ))}
         </ul>
+
+        <div class="mt-10 pt-8 border-t">
+          <p class="text-sm text-foreground/50 italic leading-relaxed">
+            "I built this because I needed it. MakerVault has been running on my own machines,
+            organizing my own library. Now I'm opening it up to 100 makers who want to stop wasting
+            time looking for files they already own."
+          </p>
+          <p class="mt-2 text-sm font-medium text-foreground/70">— Zeek, maker & builder of MakerVault</p>
+        </div>
       </div>
 
       <!-- Right: form -->
       <div class="rounded-3xl border bg-card p-6 lg:p-8">
-        <h2 class="text-xl font-semibold mb-1">Request early access</h2>
-        <p class="text-foreground/60 text-sm mb-6">We'll reach out as soon as a spot opens up.</p>
+        <h2 class="text-xl font-semibold mb-1">Claim your early access spot</h2>
+        <p class="text-foreground/60 text-sm mb-6">
+          We'll reach out as soon as your spot opens up. No spam. No credit card.
+        </p>
         <WaitlistForm client:load />
       </div>
 
