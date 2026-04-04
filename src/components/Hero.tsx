@@ -19,9 +19,9 @@ export default function Hero() {
       <div className="container mx-auto px-4 relative z-20 pt-24 pb-12 lg:pb-16">
         <div className="mb-4 flex justify-start">
           <div className="flex flex-wrap items-center justify-start rounded-full bg-primary/10 px-3 py-1 font-normal text-primary text-sm">
-            <span class="relative flex size-2 mr-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span class="relative inline-flex rounded-full size-2 bg-primary"></span>
+            <span className="relative flex size-2 mr-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span className="relative inline-flex rounded-full size-2 bg-primary"></span>
             </span>
             <span className="font-semibold">Early Access</span>
             <span className="ml-1 block font-medium">— Limited to 100 makers</span>
