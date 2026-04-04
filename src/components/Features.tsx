@@ -43,6 +43,17 @@ const features: FeatureSection[] = [
     ],
   },
   {
+    id: "xtool",
+    title: "xTool Creative Space — deep read.",
+    subtitle: "See inside your xTool files without opening the app.",
+    description: "MakerVault reads inside xTool Creative Space project files the same way it reads LightBurn. Open a file and instantly see processing parameters, layer settings, material info, and design elements — without launching xTool. Search for anything inside your xTool projects the same way you search everything else.",
+    highlights: [
+      { title: "Processing parameters", description: "Speed, power, passes, and engraving settings extracted directly from the file — visible at a glance.", icon: ZapIcon },
+      { title: "Layer & material info", description: "See every layer, its material type, and how it's configured without opening xTool Creative Space.", icon: FileTextIcon },
+      { title: "Deep search", description: "Prefix your query with / to search inside xTool file contents — find projects by material, setting, or design element.", icon: SearchIcon },
+    ],
+  },
+  {
     id: "organize",
     title: "Tags that actually work.",
     subtitle: "Better than folders. Way better than folders.",
