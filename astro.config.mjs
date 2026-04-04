@@ -19,6 +19,11 @@ export default defineConfig({
       },
       customCss: ['./src/styles/global.css'],
       social: [],
+      head: [
+        { tag: 'meta', attrs: { property: 'og:image', content: 'https://makervaultapp.com/og-image.png' } },
+        { tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
+        { tag: 'meta', attrs: { name: 'twitter:image', content: 'https://makervaultapp.com/og-image.png' } },
+      ],
       sidebar: [
         {
           label: 'Getting Started',

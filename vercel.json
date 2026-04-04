@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    { "source": "/getting-started/quick-start", "destination": "/docs/getting-started/quick-start", "permanent": true },
+    { "source": "/getting-started/installation", "destination": "/docs/getting-started/installation", "permanent": true },
+    { "source": "/getting-started/adding-folders", "destination": "/docs/getting-started/adding-folders", "permanent": true },
+    { "source": "/file-management/watched-folders", "destination": "/docs/file-management/watched-folders", "permanent": true },
+    { "source": "/file-management/duplicate-detection", "destination": "/docs/file-management/duplicate-detection", "permanent": true },
+    { "source": "/tagging/creating-tags", "destination": "/docs/tagging/creating-tags", "permanent": true },
+    { "source": "/tagging/tag-manager", "destination": "/docs/tagging/tag-manager", "permanent": true },
+    { "source": "/tagging/bulk-tagging", "destination": "/docs/tagging/bulk-tagging", "permanent": true },
+    { "source": "/search-filtering/basic-search", "destination": "/docs/search-filtering/basic-search", "permanent": true },
+    { "source": "/search-filtering/deep-search", "destination": "/docs/search-filtering/deep-search", "permanent": true },
+    { "source": "/search-filtering/filter-popup", "destination": "/docs/search-filtering/filter-popup", "permanent": true },
+    { "source": "/preview/quick-preview", "destination": "/docs/preview/quick-preview", "permanent": true },
+    { "source": "/preview/supported-previews", "destination": "/docs/preview/supported-previews", "permanent": true },
+    { "source": "/lightburn/metadata-extraction", "destination": "/docs/lightburn/metadata-extraction", "permanent": true },
+    { "source": "/lightburn/font-linking", "destination": "/docs/lightburn/font-linking", "permanent": true },
+    { "source": "/sources/managing-sources", "destination": "/docs/sources/managing-sources", "permanent": true },
+    { "source": "/sources/tracking-origins", "destination": "/docs/sources/tracking-origins", "permanent": true },
+    { "source": "/sources/auto-detection", "destination": "/docs/sources/auto-detection", "permanent": true },
+    { "source": "/data-management/export-import", "destination": "/docs/data-management/export-import", "permanent": true },
+    { "source": "/file-actions/opening-files", "destination": "/docs/file-actions/opening-files", "permanent": true }
+  ]
+}
