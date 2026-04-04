@@ -21,7 +21,6 @@ function formatDate(date: Date) {
 <MarketingLayout title={post.data.title} description={post.data.description}>
   <article class="container mx-auto px-4 pt-20 pb-24 max-w-3xl">
 
-    <!-- Header -->
     <header class="mb-10">
       <a href="/blog" class="inline-flex items-center text-sm text-foreground/50 hover:text-foreground transition-colors mb-6">
         ← Back to blog
@@ -39,25 +38,10 @@ function formatDate(date: Date) {
       <p class="mt-4 text-foreground/60 text-lg leading-relaxed">{post.data.description}</p>
     </header>
 
-    <!-- Content -->
-    <div class="prose prose-neutral dark:prose-invert max-w-none
-      prose-headings:font-medium prose-headings:text-foreground
-      prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
-      prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-      prose-p:text-foreground/70 prose-p:leading-relaxed
-      prose-strong:text-foreground prose-strong:font-medium
-      prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-      prose-blockquote:border-l-primary/40 prose-blockquote:text-foreground/60
-      prose-code:text-primary prose-code:bg-primary/10 prose-code:px-1 prose-code:rounded
-      prose-hr:border-border
-      prose-table:text-sm prose-thead:border-border prose-tr:border-border
-      prose-th:text-foreground prose-th:font-medium prose-td:text-foreground/70
-      prose-li:text-foreground/70
-    ">
+    <div class="prose prose-neutral dark:prose-invert max-w-none">
       <Content />
     </div>
 
-    <!-- CTA -->
     <div class="mt-16 rounded-3xl bg-primary/5 border border-primary/20 p-6 lg:p-8 text-center">
       <p class="text-sm font-medium text-primary uppercase tracking-wider mb-2">Early Access — 100 spots</p>
       <h2 class="text-2xl font-medium mb-2">Ready to get your maker library under control?</h2>
