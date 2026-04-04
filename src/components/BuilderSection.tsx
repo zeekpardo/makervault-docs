@@ -10,15 +10,18 @@ export default function BuilderSection() {
         </h2>
         <div className="space-y-4 text-base lg:text-lg text-foreground/70 leading-relaxed">
           <p>
-            I've owned an Aeon Mira 5 for years. At one point I was running a laser engraving business.
-            Now I mostly engrave personalized gifts for friends and family. But hobby or business, the
-            problem is the same — my file library kept growing and my system for finding things stopped
-            working a long time ago.
+            I own an Aeon Mira 7, a CNC, and a 3D printer. For a while I ran an actual laser engraving
+            business. Now it's mostly personalized gifts for friends and family. But whether it was a
+            business or a hobby, the problem was the same — thousands of design files across multiple
+            machines, and no real system for finding any of them.
           </p>
           <p>
-            So I built the tool I wished existed. MakerVault has been running on my own machines,
-            organizing my own library. Now I'm opening it up to 100 makers who want to stop wasting
-            time looking for files they already own.
+            I tried everything. Naming conventions. Folder structures. "I'll organize it this weekend."
+            Nothing stuck. So I built the tool I wished existed.
+          </p>
+          <p>
+            MakerVault has been running on my own machines, organizing my own library. Now I'm opening
+            it up to 100 makers who want to stop wasting time looking for files they already own.
           </p>
         </div>
         <p className="mt-6 font-medium text-foreground">— Zeek</p>
