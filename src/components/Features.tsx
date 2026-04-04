@@ -60,7 +60,7 @@ const features: FeatureSection[] = [
     description: "Folders force you to put a file in one place. Tags let it live in many. Create up to 3 levels of nested tags — Holiday → Christmas → Ornaments — tag files in bulk, and filter your entire library with one click.",
     highlights: [
       { title: "Nested hierarchy", description: "Create up to 3 levels of tags. Click a parent tag to filter by everything underneath it.", icon: TagsIcon },
-      { title: "Bulk tagging", description: "Select multiple files with Cmd+click or Shift+click and tag them all at once.", icon: TagsIcon },
+      { title: "Bulk actions", description: "Select multiple files with Cmd+click or Shift+click to tag, assign a source, or set a machine profile — all at once.", icon: TagsIcon },
       { title: "Know your fonts", description: "MakerVault indexes every font used in your LightBurn files. Click a font name and see every project that uses it.", icon: TypeIcon },
     ],
   },
