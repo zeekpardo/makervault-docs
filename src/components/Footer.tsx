@@ -15,6 +15,7 @@ export default function Footer() {
         <div className="flex flex-col gap-2">
           <a href="/#features" className="block hover:text-foreground transition-colors">Features</a>
           <a href="/#faq" className="block hover:text-foreground transition-colors">FAQ</a>
+          <a href="/blog" className="block hover:text-foreground transition-colors">Blog</a>
           <a href="/waitlist" className="block hover:text-foreground transition-colors">Early Access</a>
         </div>
 
