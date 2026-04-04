@@ -10,7 +10,7 @@ MakerVault supports over 25 file types commonly used by makers. Adding support f
 | Extension | Format | Preview |
 |---|---|---|
 | `.svg` | SVG | Native rendering |
-| `.dxf` | DXF (AutoCAD) | Placeholder |
+| `.dxf` | DXF (AutoCAD) | SVG canvas rendered from geometry |
 | `.ai` | Adobe Illustrator | Ghostscript required |
 | `.eps` | EPS | Ghostscript required |
 | `.cdr` | CorelDRAW | Placeholder |
@@ -19,9 +19,9 @@ MakerVault supports over 25 file types commonly used by makers. Adding support f
 
 | Extension | Software | Metadata Extraction |
 |---|---|---|
-| `.lbrn` | LightBurn | Notes, cut settings, text, fonts |
-| `.lbrn2` | LightBurn | Notes, cut settings, text, fonts |
-| `.xcs` | xTool Creative Space | — |
+| `.lbrn` | LightBurn | Notes, cut settings (with kerf), material thickness, object counts, text, fonts |
+| `.lbrn2` | LightBurn | Notes, cut settings (with kerf), material thickness, object counts, text, fonts |
+| `.xcs` | xTool Creative Space | Machine name/ID, app version, layers, shape details (type, dimensions, power, speed, DPI) |
 | `.rd` | RDWorks | — |
 | `.crv` | VCarve Pro | — |
 | `.crv3d` | Aspire | — |
@@ -68,9 +68,19 @@ MakerVault supports over 25 file types commonly used by makers. Adding support f
 | `.woff` | Web Open Font | Sample glyphs at multiple sizes |
 | `.woff2` | Web Open Font 2 | Sample glyphs at multiple sizes |
 
+## Archives
+
+| Extension | Format | Preview |
+|---|---|---|
+| `.zip` | ZIP Archive | Built-in file browser |
+
+ZIP files appear in the library like any other file. Clicking a ZIP opens a built-in browser showing a collapsible file tree of the archive's contents — no extraction needed. Clicking a file inside the ZIP previews it inline: images, SVGs, text files, and fonts all render natively in the preview area above the file list.
+
 ## Filter by file type
 
-In the search bar filter popup, file types are grouped by their software name (e.g., "LightBurn") rather than by extension. This means selecting "LightBurn" shows both `.lbrn` and `.lbrn2` files. You can also filter by category: Vector, Raster, G-code, 3D, Project, Document, or Font.
+In the search bar filter popup, file types are grouped by their software name (e.g., "LightBurn") rather than by extension. This means selecting "LightBurn" shows both `.lbrn` and `.lbrn2` files. You can also filter by category: Vector, Raster, G-code, 3D, Project, Document, Font, or Archive.
+
+The **Archives** item in the left sidebar filters the library to show only ZIP files.
 
 ## Hiding fonts
 

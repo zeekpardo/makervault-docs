@@ -26,7 +26,9 @@ LightBurn files (`.lbrn` and `.lbrn2`) have two preview modes available via a to
 - **Canvas** — An interactive SVG canvas that renders the actual cut layers, shapes, and text from the file. Supports pan (click and drag) and zoom (scroll wheel).
 - **PNG** — The embedded thumbnail image baked into the file by LightBurn. Falls back gracefully if no thumbnail is present.
 
-The metadata panel always shows cut settings (layer name, type, speed, power) alongside the preview.
+When a custom photo has been uploaded, a **Photo** tab is added to the toggle.
+
+The metadata panel shows cut settings (layer name, type, speed, power, kerf), material thickness when non-zero, and an objects breakdown with chip-style counts by shape type (e.g. "531 Path · 3 Text").
 
 ## 3D files
 
@@ -40,9 +42,29 @@ EPS and AI previews are generated via Ghostscript. If Ghostscript is not install
 
 Any file can have a custom photo (JPEG or PNG) uploaded via the right sidebar. Once uploaded, a **Photo** tab appears in the preview toggle, and the photo becomes the primary thumbnail in grid view.
 
+## ZIP archives
+
+ZIP files open a built-in browser instead of the standard preview overlay. The browser shows a collapsible file tree of the archive's contents. Clicking any file inside the ZIP previews it inline — images, SVGs, text files, and fonts all render natively. The preview area appears above the file list within the browser.
+
+## xTool files
+
+`.xcs` files (xTool Creative Space) display the embedded cover PNG thumbnail that xTool Creative Space bakes into the project file. The preview supports pan and zoom. In gallery view, the same cover thumbnail is used.
+
+When a custom photo has been uploaded, a toggle appears in the right sidebar: **Photo** | **PNG**.
+
+The metadata panel shows the machine name (e.g. "F2"), machine ID, app version, layer details (color, name, order), and per-shape details including type, dimensions, layer, processing type, power percentage, speed in mm/s, and DPI.
+
+## DXF files
+
+`.dxf` files (AutoCAD Drawing Exchange Format) are rendered as an SVG canvas built from the file's geometry. MakerVault parses LINE, CIRCLE, ARC, LWPOLYLINE, POLYLINE, and SPLINE entities and colors them by layer. The preview supports pan (click and drag) and zoom (scroll wheel).
+
+When a custom photo has been uploaded, a toggle appears in the right sidebar: **Photo** | **DXF**.
+
+The metadata panel shows the DXF version (e.g. "R2018"), units (Inches, mm, etc.), overall dimensions (W × H), a breakdown of entity types, layer names, and any text content found in the file.
+
 ## Placeholder preview
 
-File types without native preview support (DXF, CDR, OBJ, xTool, RDWorks, VCarve Pro) show a placeholder icon with the file type label. You can still see all metadata and use the "Open in [App]" button to view the file in its native application.
+File types without native preview support (CDR, OBJ, RDWorks, VCarve Pro) show a placeholder icon with the file type label. You can still see all metadata and use the "Open in [App]" button to view the file in its native application.
 
 ## Right sidebar preview
 

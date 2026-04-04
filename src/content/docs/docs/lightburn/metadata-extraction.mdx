@@ -16,6 +16,9 @@ MakerVault reads inside LightBurn `.lbrn` and `.lbrn2` files at scan time to ext
 | **App Version** | `<LightBurnProject AppVersion>` | Detail panel |
 | **Embedded Thumbnail** | `<Thumbnail Source>` | PNG preview mode |
 | **Shapes & Layers** | `<Shape>` and `<CutSetting>` elements | Interactive canvas preview |
+| **Material Height (Z offset)** | `zOffset` on cut settings | Detail panel (when non-zero) |
+| **Kerf** | `kerf` on cut settings | Cut settings table, per layer |
+| **Shape Breakdown** | `<Shape>` elements by type | Detail panel (paths, text, bitmaps) |
 
 ## File format handling
 

@@ -17,8 +17,10 @@ For each cut layer in a LightBurn file, MakerVault shows:
 | **Speed** | mm/s speed setting |
 | **Min Power** | Minimum power percentage |
 | **Max Power** | Maximum power percentage |
-| **Interval** | Line interval for scan operations |
-| **Priority** | Processing order |
+| **Kerf** | Beam/blade width compensation in mm (per layer) |
+| **Interval** | Scan line spacing in mm — affects engraving quality and speed |
+| **Priority** | The sequence in which layers are processed |
+| **Material Height (Z offset)** | Configured thickness or Z offset setting (shown when non-zero) |
 
 ## Where to see it
 
@@ -28,6 +30,22 @@ Cut settings appear in three places:
 2. **Spacebar preview** — The metadata sidebar includes cut settings
 3. **Expanded file row** — The metadata column shows cut settings inline
 
+## Shape breakdown
+
+The detail panel also shows a count of the different shape types in the project:
+
+| Count | What it represents |
+|---|---|
+| **Paths** | Vector paths and shapes |
+| **Text** | Text elements in the design |
+| **Bitmaps** | Embedded raster images |
+
+This gives you an at-a-glance sense of what a file contains before opening it.
+
 ## Why this matters
 
-Makers often have hundreds of LightBurn files with different cut settings for different materials. Being able to see "this file uses 300mm/s at 35% power on a Scan layer called Tumblers" without opening LightBurn saves significant time when you're looking for the right settings to reuse.
+Makers often have hundreds of LightBurn files with different cut settings for different materials. Being able to see "this file uses 300mm/s at 35% power on a Scan layer called Tumblers, with 0.1mm kerf compensation" without opening LightBurn saves significant time when you're looking for the right settings to reuse.
+
+**Kerf** matters for precision cuts — if you've dialed in the right kerf for a specific material and machine, seeing it in the metadata means you can confirm settings match before loading a job.
+
+**Interval** (scan line spacing) directly affects engraving quality and job time. A tighter interval produces smoother engravings but takes longer. Seeing it alongside speed and power gives you the full picture of what a Scan layer will do.
