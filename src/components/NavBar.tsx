@@ -6,7 +6,6 @@ const menuItems = [
   { label: "Features", href: "/#features" },
   { label: "FAQ", href: "/#faq" },
   { label: "Early Access", href: "/waitlist" },
-  { label: "Contact", href: "/contact" },
   { label: "Docs", href: "/docs", external: false },
 ];
 
@@ -50,7 +49,7 @@ export default function NavBar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="block px-3 py-2 font-medium text-foreground/80 text-sm hover:text-foreground transition-colors"
+                className="block px-3 py-2 font-medium text-foreground/80 text-sm hover:text-foreground transition-colors whitespace-nowrap"
                 {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 {item.label}

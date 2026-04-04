@@ -12,7 +12,7 @@ export default function WaitlistForm() {
   }
 
   return (
-    <form name="waitlist" method="POST" action="/thankyou">
+    <form name="waitlist" method="GET" action="/thankyou">
       <div className="flex flex-col gap-4">
         <div className="grid grid-cols-2 gap-3">
           <div>
