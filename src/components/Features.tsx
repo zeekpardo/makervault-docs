@@ -1,7 +1,7 @@
 import {
   SearchIcon, TagsIcon, EyeIcon, FolderSyncIcon,
   LinkIcon, FileTextIcon, ZapIcon, ShieldIcon, CopyIcon,
-  ArchiveIcon, TypeIcon, CpuIcon,
+  ArchiveIcon, TypeIcon, CpuIcon, FolderOpenIcon,
 } from "lucide-react";
 import type { JSXElementConstructor } from "react";
 
@@ -57,10 +57,11 @@ const features: FeatureSection[] = [
     id: "organize",
     title: "Tags that actually work.",
     subtitle: "Better than folders. Way better than folders.",
-    description: "Folders force you to put a file in one place. Tags let it live in many. Create up to 3 levels of nested tags — Holiday → Christmas → Ornaments — tag files in bulk, and filter your entire library with one click.",
+    description: "Folders force you to put a file in one place. Tags let it live in many. Create up to 3 levels of nested tags — Holiday → Christmas → Ornaments — tag files in bulk, and filter your entire library with one click. Then group files into project builds to record what you actually made.",
     highlights: [
       { title: "Nested hierarchy", description: "Create up to 3 levels of tags. Click a parent tag to filter by everything underneath it.", icon: TagsIcon },
       { title: "Bulk actions", description: "Select multiple files with Cmd+click or Shift+click to tag, assign a source, or set a machine profile — all at once.", icon: TagsIcon },
+      { title: "Project builds", description: "Group design files into a project. Record which machine and material you used, attach finished-work photos, and track status from idea to complete.", icon: FolderOpenIcon },
       { title: "Know your fonts", description: "MakerVault indexes every font used in your LightBurn files. Click a font name and see every project that uses it.", icon: TypeIcon },
     ],
   },
