@@ -1,0 +1,78 @@
+---
+title: Materials
+description: Track which physical materials your design files are intended for, and filter your library by material.
+---
+
+MakerVault lets you track the physical materials you cut, engrave, or print — wood, acrylic, fabric, foam, and anything else in your shop. Assign a material to a file to remember which material the design was used with, then filter your library to find all files associated with a particular material.
+
+## Setting up materials
+
+Materials are managed in **Preferences → Materials**. The panel has four tabs: **Materials**, **Categories**, **Brands**, and **Suppliers**.
+
+### Materials tab
+
+This is your inventory of specific materials — the individual items you track (e.g., "1/8" Baltic Birch Plywood", "3mm Black Acrylic"). Each material is based on a type from the Categories hierarchy and can optionally be linked to a brand and supplier.
+
+### Categories tab
+
+Categories define the taxonomy used to classify materials. The structure is a three-level tree:
+
+```
+Category → Subcategory → Type
+```
+
+For example:
+
+- **Wood** → Plywood → Baltic Birch Plywood
+- **Acrylic** → Cast Acrylic → Black Cast Acrylic
+- **Fabric** → Felt → Wool Felt
+
+You manage this taxonomy here — add, rename, or remove entries at any level. You cannot delete a category, subcategory, or type that has materials assigned to it.
+
+### Brands tab
+
+The Brands tab holds a list of material brands (e.g., JDS Industries, Inventables, Woodpecker Crafts). Each entry has a name and an optional website URL. You can add, rename, reorder, and delete brands.
+
+### Suppliers tab
+
+The Suppliers tab holds a list of places you buy materials. Each entry has a name, an optional URL, and optional notes. This is useful for tracking local stores, online shops, or direct suppliers.
+
+## Creating a material
+
+To add a material:
+
+1. Open **MakerVault → Preferences** (or press **Cmd+,**).
+2. Go to the **Materials** section.
+3. Click **Add Material**.
+4. Select a type using the three cascading dropdowns: **Category → Subcategory → Type**.
+5. Fill in any additional fields.
+
+The available fields are:
+
+| Field | Notes |
+|---|---|
+| **Category / Subcategory / Type** | Required. Three-level selection from your Categories taxonomy. |
+| **Brand** | Optional. Chosen from your Brands list. |
+| **Supplier** | Optional. Chosen from your Suppliers list. |
+| **Custom name** | Optional. Override the display name (e.g., "My favorite birch"). |
+| **Thickness** | Optional. Material thickness in mm. |
+| **Color** | Optional. A color label or description. |
+| **Quantity** | Optional. How many units you have on hand. |
+| **Quantity unit** | Optional. The unit for quantity (sheets, rolls, spools, etc.). |
+| **Notes** | Optional. Any other details you want to remember. |
+
+## Assigning a material to a file
+
+A file can have multiple materials assigned to it — useful when a design is used across different substrates or in projects that combine materials.
+
+To assign a material:
+
+1. Select a file to open the detail panel.
+2. Find the **Materials** section in the detail panel.
+3. Click to open the material picker and select from your materials list.
+
+Repeat to add additional materials to the same file.
+
+## Filtering by material
+
+Use the [filter popup](/search-filtering/filter-popup) to filter your library to files associated with a specific material.

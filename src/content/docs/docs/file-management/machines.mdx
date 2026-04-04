@@ -1,20 +1,65 @@
 ---
 title: Machines
-description: Track which machine each file is intended for, and assign machines to files in bulk.
+description: Track which machine each file is intended for, and manage machine types and manufacturers.
 ---
 
-MakerVault lets you track which machine a design file is intended for — laser cutters, CNCs, vinyl cutters, or any other device in your shop. Once set up, you can filter and sort your library by machine, and assign machines to many files at once.
+MakerVault lets you track which machine a design file is intended for — laser cutters, CNCs, vinyl cutters, or any other device in your shop. Once set up, you can filter and sort your library by machine and assign machines to many files at once.
 
 ## Setting up machines
 
-Machines are managed in **Preferences**. To add a machine:
+Machines are managed in **Preferences → Machines**. The Machines preference panel has three tabs: **Machines**, **Types**, and **Manufacturers**.
+
+### Machines tab
+
+This is your list of actual machines. To add a machine:
 
 1. Open **MakerVault → Preferences** (or press **Cmd+,**).
 2. Go to the **Machines** section.
-3. Click **Add Machine** and give it a name (e.g., "xTool M1", "Glowforge Pro", "Shapeoko 4").
-4. Repeat for each machine in your shop.
+3. Click **Add Machine**.
+4. Fill in the fields (see [Creating a machine](#creating-a-machine) below).
 
-You can rename or remove machines from the same Preferences panel at any time.
+You can rename or remove machines from the same panel at any time.
+
+### Types tab
+
+Machine types define the categories of machines you work with. MakerVault comes pre-seeded with 10 common types:
+
+- CO2 Laser
+- Diode Laser
+- Fiber Laser
+- MOPA Laser
+- Infrared Laser
+- 3D Printer
+- CNC Router
+- Vinyl Cutter
+- Embroidery
+- Pen Plotter
+
+You can add custom types, rename existing ones, reorder the list by dragging, or delete types you don't use. A type cannot be deleted if any machines are assigned to it.
+
+Each type has a **Has Z axis** toggle. When enabled, machines of that type show a **Bed Depth** field in addition to the standard width and height dimensions. Enable this for 3D printers, CNC routers, or any machine with meaningful depth.
+
+### Manufacturers tab
+
+The Manufacturers tab holds a list of machine brands. Each entry has a name and an optional website URL. You can add, rename, reorder, and delete manufacturers the same way as types.
+
+## Creating a machine
+
+When you add or edit a machine, the following fields are available:
+
+| Field | Notes |
+|---|---|
+| **Type** | Required. Chosen from your Types list. |
+| **Manufacturer** | Optional. Chosen from your Manufacturers list. |
+| **Model** | Text field for the model name (e.g., "Pro", "S1 Pro", "4 XL"). |
+| **Bed Width** | Work area width in mm. Always shown. |
+| **Bed Height** | Work area height in mm. Always shown. |
+| **Bed Depth** | Work area depth in mm. Only shown when the selected type has "Has Z axis" enabled. |
+| **Nickname** | Optional. A friendly name shown in the interface (e.g., "Big Laser"). |
+| **Watts** | Optional. Machine power. |
+| **Max Speed** | Optional. Maximum speed in mm/s. |
+
+If you added machines before the Types and Manufacturers tabs were introduced, their type and manufacturer fields were automatically migrated.
 
 ## Assigning a machine to a file
 
